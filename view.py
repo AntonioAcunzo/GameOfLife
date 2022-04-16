@@ -2,7 +2,7 @@ import os
 import numpy as np
 from PyQt5.QtWidgets import QApplication, QDialog, QMainWindow, QMessageBox, QFileDialog
 
-from main_window_ui5 import Ui_MainWindow
+from main_window_ui import Ui_MainWindow
 
 from model import GolModel
 from grid import GolGrid
