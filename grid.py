@@ -43,9 +43,6 @@ class GolGrid(QWidget):
         self.setStyleSheet("background-color: rgb(255, 255, 255);")
         self._layout.setContentsMargins(0, 0, 0, 0)
         self._layout.setSpacing(0)
-
-        print(self._model.getGridSizeSelected()[0])
-        print(self._model.getGridSizeSelected()[1])
         self._initGrid(int(self._model.getGridSizeSelected()[0]),self._model.getGridSizeSelected()[1])
 
     def _initGrid(self, rows, cols):

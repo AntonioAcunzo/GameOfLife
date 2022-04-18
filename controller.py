@@ -152,8 +152,8 @@ class GolController:
         print("cliccato in ", click_x, " - ", click_y)
         right_click = (grid.shape[0] - self._model.getGridSizeSelected()[0])//2
         grid[right_click + click_x][right_click + click_y] = 1 if grid[right_click + click_x][right_click + click_y] == 0 else 0
-        for i in range(grid.shape[0]):
-            print(grid[i])
+        #for i in range(grid.shape[0]):
+            #print(grid[i])
         self._model.setGrid(grid)
 
     def modifyGridSize(self, size_text):
