@@ -302,21 +302,9 @@ class GolView(QMainWindow, Ui_MainWindow):
         """
         self.gridComboBox.currentTextChanged.connect(slot)
 
-    '''
-        def comboSizeGridIndex(self, slot):
-        """
-        slot of
-        """
-        self.gridComboBox.currentIndexChanged.connect(slot)
-    '''
 
 
 
 
 
-'''
-class FindReplaceDialog(QDialog):
-    def __init__(self, parent=None):
-        super().__init__(parent)
-        loadUi("ui/find_replace.ui", self)
-'''
+
