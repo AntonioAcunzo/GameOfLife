@@ -42,7 +42,7 @@ The following version of libraries are used:
 | **Numpy**  | tested on v1.21.2 |
 
 ## Graphical User Interface
-![Graphical User Interface of this implementation of Game of Life](img/gui.png "Graphical User Interface")
+![Graphical User Interface of this implementation of Game of Life](img/simulazione-1.png "Graphical User Interface")
 
 ## Features
 This implementation of Game of Life have the following features:
