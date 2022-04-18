@@ -11,7 +11,7 @@ For more information this is the [original article](http://ddi.cs.uni-potsdam.de
 
 ## Rules
 
- At each time step, the new board is computed from the previous one depending on the following rules:
+At each time step, the new board is computed from the previous one depending on the following rules:
  
 Each grid location is either empty (cell dead) or populated (cell alive) by a single cell.
 The concept of neighbor is very important. 
@@ -24,7 +24,7 @@ At each time step, the new board is computed from the previous one depending on 
   3. Each populated location with two or three neighbors survives.
   4. Each unpopulated location that becomes populated if it has exactly three populated neighbors.
 
-img (img/rules.png)
+(img/rules.png)
 
 # About this implementation
 This repository is a implementation of the *Game of Life* made in Python.
@@ -42,12 +42,13 @@ The following version of libraries are used:
 | **Numpy**  | tested on v1.21.2 |
 
 ## Graphical User Interface
-![Graphical User Interface of this implementation of Game of Life](img/gui.png "Graphical User Interface")
+![Graphical User Interface of this implementation of Game of Life](img/Simulazione-1.png)
+![Graphical User Interface of this implementation of Game of Life](img/Simulazione-4.png)
 
 ## Features
 This implementation of Game of Life have the following features:
-* A menu bar with load/save function for board and a guide to play.
-* Load initial state from configurations encoded in Run Length Encoding (RLE)
+* A menu bar with load/save function for board, a guide to play and the rules of the game.
+* Load initial state from configurations encoded in Run Length Encoding (RLE).
 * Editing of state on the board with the left click of the mouse. If users click on the board set to alive/death a single cell.
 * Controls buttons: start and pause the simulation, do a single step, clear the board.
 * A slider that allow to set the speed of the simulation when is not running.
@@ -63,5 +64,5 @@ $ cd GameOfLife
 $ python gameLauncher.py
 ```
 
-You can find RLE-encoded configurations at: https://www.conwaylife.com/wiki/Main_Page
+You can find other RLE-encoded configurations at: https://www.conwaylife.com/wiki/Main_Page
 
