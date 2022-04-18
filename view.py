@@ -63,36 +63,14 @@ class GolView(QMainWindow, Ui_MainWindow):
                 if path[0] != '':
                     print("Path file : " , path)
 
-
                     grid, originalRows, originalCols = self._gridFromFile(path[0])
-                    #self._gridFromFile(path[0])
-                    #self._model.setGridSize(self.gridComboBox.currentText())
-
-
 
                     self._model.setGrid(grid)
 
-                    #print("set grid da read")
-                    #size_text = '{}x{}'.format(self._model.getGridSize()[0], self._model.getGridSize()[1])
                     size_text = '{}x{}'.format(originalRows, originalCols)
-                    #print(size_text)
-
-                    '''
-                    print("Elementi in grid combo : ", self.gridComboBox.count())
-                    if self.gridComboBox.count() == 6:
-                        self.gridComboBox.removeItem(5)
-                    self.gridComboBox.addItem("")
-                    self.gridComboBox.setItemText(5, size_text)
-                    self.gridComboBox.setCurrentIndex(5)
-                    '''
-
-
 
                     self.gridComboBox.setCurrentIndex(4)
 
-
-
-                    #self._updateView()
 
 
 
