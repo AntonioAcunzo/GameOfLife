@@ -24,7 +24,7 @@ At each time step, the new board is computed from the previous one depending on 
   3. Each populated location with two or three neighbors survives.
   4. Each unpopulated location that becomes populated if it has exactly three populated neighbors.
 
-(img/rules.png)
+![Rules of Game of Life](img/rules.png)
 
 # About this implementation
 This repository is a implementation of the *Game of Life* made in Python.
