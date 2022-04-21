@@ -8,7 +8,7 @@ if __name__ == '__main__':
 
     app = QApplication(sys.argv)
 
-    # Create the model view controller object
+    # Create the model view controller objects
     model = GolModel()
     view = GolView(model)
     controller = GolController(app, model, view)

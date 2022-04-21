@@ -4,8 +4,6 @@ from PyQt5.QtWidgets import QFrame, QWidget
 from model import GolModel
 from functools import partial
 
-
-
 class GolGrid(QWidget):
     """
         Grid class for Game of life
@@ -55,7 +53,7 @@ class GolGrid(QWidget):
             for j in range(cols):
                 cell = QFrame(self)
                 self._setupFrame(cell)
-                cell.setSizePolicy(QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding))
+                #cell.setSizePolicy(QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding))
                 cell.mousePressEvent = partial(self._cellClick, (i, j))
                 self._cells[-1].append(cell)
                 self._layout.addWidget(cell, i, j)
@@ -77,7 +75,6 @@ class GolGrid(QWidget):
         Slot connected to QFrame cell clicked with given coordinates.
         """
         self.changeStateSignal.emit([_coords[0], _coords[1]])
-        #self.controller.on_cell_clicked(_coords[0], _coords[1])
 
     def _clearLayout(self):
         """

@@ -27,11 +27,8 @@ class GolView(QMainWindow, Ui_MainWindow):
         # Observe the Game of Life Model
         self._model = model
         self._model.register(self._updateView)
-        #self._updateView()
-
 
         self.grid = GolGrid(self, self._model, self.getLayoutGrid())
-
 
 
     def getGrid(self):
@@ -57,7 +54,6 @@ class GolView(QMainWindow, Ui_MainWindow):
         """
         if(not self._model.isRunning()):
             print('Open pattern')
-            #self._model.clearGrid()
             try:
                 path = QFileDialog.getOpenFileName(directory=CURRENT_DIR)
                 if path[0] != '':
@@ -110,48 +106,22 @@ class GolView(QMainWindow, Ui_MainWindow):
                         if symbol == 'O':
                             row.append(1)
 
-                        #config[-1].append(0 if symbol == "." else 1)
-                    #print(row)
                     config.append(row)
 
             for row in config:
                 for i in range(cols-len(row)):
                     row.insert(0,0)
 
-        print(config)
-
-
-        #max_width = len(config[-1]) if len(config[-1]) > max_width else max_width
         grid = np.zeros((self._model.getGridSize()[0], self._model.getGridSize()[1]), dtype=np.uint8)
 
-        print(rows)
-        print((self._model.getGridSize()[0] - rows))
-        print((self._model.getGridSize()[0] - rows) // 2)
-        #print((self._model.getGridSize()[1] - cols) // 2)
+        # print(rows)
+        # print((self._model.getGridSize()[0] - rows))
+        # print((self._model.getGridSize()[0] - rows) // 2)
 
         for i in range(rows):
             for j in range(cols):
-                #print(i, " - ", j)
                 print(i + (self._model.getGridSize()[0] - rows) // 2 , " - " , j + (self._model.getGridSize()[1] - cols)//2)
                 grid[i + (self._model.getGridSize()[0] - rows)//2][j + (self._model.getGridSize()[1] - cols)//2] = config[i][j]
-                #print(grid[i + (self._model.getGridSize()[0] - rows)//2][j + (self._model.getGridSize()[1] - cols)//2])
-
-        '''
-        print("i < " , (self._model.getGridSize()[0] - rows)//2)
-        print("j < ", (self._model.getGridSize()[1] - cols) // 2)
-        for i in range(self._model.getGridSize()[0]):
-            for j in range(self._model.getGridSize()[1]):
-
-                if i < (self._model.getGridSize()[0] - rows)//2 or j < (self._model.getGridSize()[1] - cols)//2 or i > (self._model.getGridSize()[0] - rows)//2:
-                    grid[i][j] = 0
-                else:
-                    print(i, " - ", j)
-                    print(i-(self._model.getGridSize()[0] - rows)//2)
-                    print(j - (self._model.getGridSize()[1] - cols) // 2)
-                    grid[i][j] = config[i-(self._model.getGridSize()[0] - rows)//2][j-(self._model.getGridSize()[1] - cols)//2]
-                    print(grid[i][j])
-        '''
-
 
 
         return grid, rows, cols
@@ -163,15 +133,11 @@ class GolView(QMainWindow, Ui_MainWindow):
         """
         if (not self._model.isRunning()):
             print('save pattern')
-            #grid = self._model.getGrid()
             try:
                 path = QFileDialog.getSaveFileName(directory=CURRENT_DIR)
-
                 if path[0] != '':
                     print(path)
                     self._gridOnFile(path,self._model.getGrid())
-
-
 
             except Exception:
                 print('File saving failed')

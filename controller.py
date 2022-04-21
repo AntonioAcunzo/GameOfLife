@@ -49,6 +49,7 @@ class GolController:
         """
         Start the game
         """
+        print("Play clicked")
         self._model.setRunning(not self._model.isRunning())
         if self._model.isRunning():
             interval = 1000 / self._model.getFps()
@@ -60,6 +61,7 @@ class GolController:
         """
         Stop the game
         """
+        print("Pause clicked")
         self._model.setRunning(False)
         self._timer.stop()
 
@@ -67,7 +69,7 @@ class GolController:
         """
         Do next step of the game
         """
-        print("next Step")
+        print("Next Step")
         self._model.setStep(self._model.getStep()+1)
 
         grid = self._model.getGrid()
@@ -152,8 +154,7 @@ class GolController:
         print("cliccato in ", click_x, " - ", click_y)
         right_click = (grid.shape[0] - self._model.getGridSizeSelected()[0])//2
         grid[right_click + click_x][right_click + click_y] = 1 if grid[right_click + click_x][right_click + click_y] == 0 else 0
-        #for i in range(grid.shape[0]):
-            #print(grid[i])
+
         self._model.setGrid(grid)
 
     def modifyGridSize(self, size_text):
@@ -163,7 +164,7 @@ class GolController:
         print("E' cambiata la size della griglia nella combobox ")
         print("Nuova size : " , size_text)
 
-        row, col = int(size_text[0:int(size_text.rfind("x"))]), int(size_text[int(size_text.rfind("x")) + 1:5])
+        #row, col = int(size_text[0:int(size_text.rfind("x"))]), int(size_text[int(size_text.rfind("x")) + 1:5])
 
         self._model.setGridSizeSelected(size_text)
 
